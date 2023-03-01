@@ -10,7 +10,6 @@ import {
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Button, Menu } from 'antd';
-import {log} from "util";
 import {useNavigate} from "react-router-dom";
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -34,9 +33,9 @@ function getItem(
 const items: MenuItem[] = [
     getItem('Homepage', '/home', <PieChartOutlined />),
     getItem('Appointment', '/appointment', <DesktopOutlined />),
-    getItem('Medicine.tsx', '/medicine', <ContainerOutlined />),
-    getItem('Bill.tsx', '/bill', <MailOutlined />),
-    getItem('Setting.tsx', '/setting', <AppstoreOutlined />),
+    getItem('Medicine', '/medicine', <ContainerOutlined />),
+    getItem('Bill', '/bill', <MailOutlined />),
+    getItem('Setting', '/setting', <AppstoreOutlined />),
 ];
 
 const Sidebar: React.FC = () => {

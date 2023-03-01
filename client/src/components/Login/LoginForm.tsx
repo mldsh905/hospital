@@ -10,7 +10,7 @@ const LoginForm: React.FC = () => {
     const dispatch = useDispatch();
     const onFinish = (values: any) => {
         //here to be developed
-        console.log('Success:', values);
+        // console.log('Success:', values);
         dispatch(setUser(values.username));
         navigate('/')
     };
