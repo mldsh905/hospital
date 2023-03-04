@@ -12,7 +12,7 @@ const LoginForm: React.FC = () => {
         //here to be developed
         // console.log('Success:', values);
         dispatch(setUser(values.username));
-        navigate('/')
+        navigate('/appointment')
     };
 
     const onFinishFailed = (errorInfo: any) => {

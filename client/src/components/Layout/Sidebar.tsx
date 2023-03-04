@@ -11,6 +11,7 @@ import {
 import type { MenuProps } from 'antd';
 import { Button, Menu } from 'antd';
 import {useNavigate} from "react-router-dom";
+import AppointmentView from "../Appointment/AppointmentView/AppointmentView";
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -33,6 +34,7 @@ function getItem(
 const items: MenuItem[] = [
     getItem('Homepage', '/home', <PieChartOutlined />),
     getItem('Appointment', '/appointment', <DesktopOutlined />),
+    getItem('AppointmentView', '/appointmentview', <DesktopOutlined />),
     getItem('Medicine', '/medicine', <ContainerOutlined />),
     getItem('Bill', '/bill', <MailOutlined />),
     getItem('Setting', '/setting', <AppstoreOutlined />),
@@ -49,7 +51,7 @@ const Sidebar: React.FC = () => {
     return (
         <div
             style={{ borderInlineEnd:'3px solid rgba(5,5,5,0.1'}}
-            className='h-[100vh]'
+            className='min-h-[100vh]'
         >
             <Button type="primary" onClick={toggleCollapsed} style={{ marginBottom: 16 }}>
                 {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
