@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import AppointmentOverview from "./AppointmentOverview";
 import AppointmentRegisterAndBill from "./AppointmentRegisterAndBill";
-import AppointmentDoctorSchedule from "./AppointmentDoctorSchedule";
+// import AppointmentDoctorSchedule from "./AppointmentDoctorSchedule";
+
+const AppointmentDoctorSchedule = React.lazy(() => import('./AppointmentDoctorSchedule'));
 
 const Appointment = () => {
     return (
@@ -11,9 +13,11 @@ const Appointment = () => {
                 <span className='font-bold text-xl'>Registration and Bills</span>
                 <AppointmentRegisterAndBill/>
             </div>
-            <AppointmentDoctorSchedule/>
+            <Suspense fallback={<div>loading...</div>}>
+                <AppointmentDoctorSchedule/>
+            </Suspense>
         </div>
-    );
+    )
 };
 
 export default Appointment;

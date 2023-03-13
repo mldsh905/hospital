@@ -10,7 +10,7 @@ const Layout = () => {
     const user = useSelector((state: RootState) => state.user);
     if (!user.user) return (<Login/>);
     return (
-        <div className='flex w-[100vw] '>
+        <div className='flex w-full'>
             <Sidebar/>
             <div className='w-full'>
                 <Topbar/>
